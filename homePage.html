@@ -119,7 +119,7 @@
 
         .nav-link-title {
             display: none;
-            color: rgb(126, 150, 20);
+            color: rgb(217, 219, 206);
 
         }
 
@@ -251,43 +251,170 @@
             transform: scale(1.1);
         }
 
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .home .video {
+            height: 50%;
+            width: 100%;
+            border: none;
+          
+        }
+
+        .home .video video {
+            /* position: absolute; */
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .home .content {
+            margin-top: 7rem;
+
+        }
+
+        .home .content h1 {
+            font-size: 6.1vw;
+            color: white;
+            text-shadow: 0 .3rem .5rem black;
+        }
+
+        .home .content p {
+            font-size: 1.5vw;
+            color: white;
+            text-shadow: 0 .3rem .5rem black;
+        }
+
 
         /* .back-video {
             position: absolute;
             right: 0;
             bottom: 0;
-            /* overflow: hidden; */
-            /* z-index: -1; */
-            /* width: 100%; */
-            /* height: 50%; */
-            /* left: 0; */
-        /* } */ 
+            overflow: hidden;
+            z-index: -1;
+            width: 100%;
+            height: 50%;
+            left: 0;
+            padding: -10%;
+        } */
 
         .latest {
             margin-top: 20px;
 
         }
-        .imgi{
+
+        .imgi {
             width: 100%;
             right: 0;
             position: relative;
             margin: auto;
 
         }
-        .imgi>img{
+
+        .imgi>img {
             width: 100%;
         }
-        .heading{
-            color:#bd7100;
+
+        .heading {
+            color: #bd7100;
             position: absolute;
             top: 50%;
             font-size: 90px;
-            font-style:oblique;
-            font-family: "Inter",sans-serif;
+            font-style: oblique;
+            font-family: "Inter", sans-serif;
 
         }
 
+        /* new */
+        .section-list{
+            width: 100%;
+            height: 26rem;
+            position: relative;
+            margin: 1rem 0 2rem;
+        }
+        .card-container{
+            position: absolute;
+            width: 97%;
+            padding-left: 1rem;
+            height: 24rem;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-behavior: smooth;
 
+        }
+        .card-container::-webkit-scrollbar{
+            display: none;
+
+        }
+        .card{
+            position: relative;
+            min-width: 18rem;
+            width: 18rem;
+            height: 28rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            margin-right: 1.6rem;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .card:hover{
+            transform: scale(1.2);
+
+        }
+        .card:hover .card-body{
+            opacity: 1;
+
+        }
+        .card-image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .card-button{
+            padding: .6rem;
+            text-transform: capitalize;
+            font-weight: 600;
+            letter-spacing: .02rem;
+            width: 100%;
+            margin-top: 80%;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .card-section-info{
+            display: flex;
+            gap: .8rem;
+            align-items: center;
+            margin-top: 1rem;
+            text-transform: capitalize;
+
+        }
+        .card-section-info>apan{
+            font-size: 1rem;
+            color: white;
+
+        }
+        .card-para{
+            font-size: 1.2rem;
+            color: white;
+            letter-spacing: .02rem;
+            margin-top: 1rem;
+        }
+
+        /* end */
         .latest>div:nth-child(1) {
             color: white;
             font-size: large;
@@ -332,17 +459,90 @@
 
 
         }
-     
+
+        .footer {
+            /* padding: 0 20px; */
+            /* z-index: 10; */
+            background: black;
+            /* background-color: #000; */
+            /* min-height: 298px; */
+            width: 100%;
+            color: #161313;
+            /* overflow: scroll; */
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            /* background-color: #000000; */
+            background: black;
+            justify-content: space-around;
+            max-width: 1200px;
+            min-width: 1200px;
+            margin: 0 auto;
+            padding: 76px 0;
+            height: 100%;
+        }
+
+        .points {
+            /* color: #808080; */
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            /*    border: 1px solid white;*/
+            width: 300px;
+            margin: 26px 0px 10px 15px;
+            /*    padding: 15px 0px 0px 0px;*/
+        }
+
+        .footer-li {
+            padding: 20px 10px 2px 0px;
+        }
+
+        .footer-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-li a {
+            color: #4b5166;
+            font-size: 15px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .footer-li a:hover {
+            font-weight: 600;
+        }
+
+        .points div {
+            /* border: 2px solid #808080; */
+            /* padding: 10px;
+            margin: 30px 0px 10px 57px;
+            border-radius: 10px;
+            transition: transform 0.5s; */
+            display: flex;
+        }
+
+        .points div img {
+            padding: 10px;
+            margin: 30px 0px 0px 0px;
+            border-radius: 10px;
+            transition: transform 0.5s;
+
+        }
+
+        .points img:hover {
+            transform: scale(1.06);
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <div id="screen">
-        <!-- <div class="hero">
-                <video autoplay loop muted plays-inline class="back-video" src="/once-upon-a-time-in-ukraine-trailer-1_h480p.mov"
-                    type="video/mp4"></video>
 
-            </div> -->
         <div id="left">
             <div>
                 <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" alt="">
@@ -413,8 +613,20 @@
                 </div>
 
             </div>
-            <br><br>
+            <section class="home" id="home">
+                <div class="video">
+                    <video src="once-upon-a-time-in-ukraine-trailer-1_h480p.mov" loop muted autoplay></video>
+                    <div class="content">
+                        <!-- <h1>explore new places</h1>
+                        <p>sfdfgfjgkl dkjfdkgfkdglf jdfksdgdklgkl</p> -->
+                    </div>
+
+
+
+                </div>
+            </section>
             
+
             <div class="imgi">
                 <img src="https://wallpapercave.com/wp/wp4650953.jpg" alt="">
                 <h2 class="heading">CHHICHHORE</h2>
@@ -422,6 +634,37 @@
                 <p></p>
                 <br><br>
             </div>
+
+
+            <!-- <div class="Section-list">
+                <button class="pre-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/361/1500361-v-b4b09b222ec6" class="card-image" alt="">
+                        <div class="card-body">
+                            <button class="card-button">
+                                <span><i class="fa-solid fa-play"></i></span>
+                                <span>watch now</span>
+                            </button>
+                            <div class="card-section-info">
+                                <span>2013</span>
+                                <span>.</span>
+                                <span>2h 10m</span>
+                                <span>.</span>
+                                <span>4 languages</span>
+
+                            </div>
+                            <p class="card-para">Lorem ipsum dolor sit</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div> -->
             <div class="latest">
                 <div>
                     <h2>Latest & Trending</h2>
@@ -430,7 +673,23 @@
                     <div>
                         <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/361/1500361-v-b4b09b222ec6"
                             alt="">
-                        
+                        <div class="card-body">
+                            <button class="card-button">
+                                <span><i class="fa-solid fa-play"></i></span>
+                                <span>watch now</span>
+                            </button>
+                            <div class="card-section-info">
+                                <span>2013</span>
+                                <span>.</span>
+                                <span>2h 10m</span>
+                                <span>.</span>
+                                <span>4 languages</span>
+
+                            </div>
+                            <p class="card-para">Lorem ipsum dolor sit</p>
+
+                        </div>
+
                     </div>
                     <div>
                         <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4967/1494967-v-2b16e4e00bb1"
@@ -615,6 +874,57 @@
 
                 </div>
             </div>
+
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="points">
+                        Company
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">About Us</a></li>
+                            <li class="footer-li"><a href="#">Careers</a></li>
+                            <!-- <li class="footer-li"><a href="#">Track Your Order</a></li>
+                            <li class="footer-li"><a href="#">Returns</a></li>
+                            <li class="footer-li"><a href="#">Find a Store</a></li> -->
+
+                        </ul>
+                    </div>
+                    <div class="points">
+                        View Website in
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">English</a></li>
+                            <!-- <li class="footer-li"><a href="#">Blog</a></li>
+                            <li class="footer-li"><a href="#">Help & FAQS</a></li>
+                            <li class="footer-li"><a href="#">About Tanishq</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="points">
+                        Need Help ?
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">Visit Help Center</a></li>
+                            <li class="footer-li"><a href="#">Share Feedback</a></li>
+                            <!-- <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                            <li class="footer-li"><a href="#">Cookie Policy</a></li>
+                            <li class="footer-li"><a href="#">Offer Terms</a></li>
+                            <li class="footer-li"><a href="#">Phishing & Fraud</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="points">
+                        <h4>Connect with Us</h4>
+                        <div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                                    height="54" />
+                            </div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                                    height="54" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
 
 
 

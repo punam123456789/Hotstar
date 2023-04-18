@@ -59,6 +59,25 @@
 
        
 
+        .code>div:nth-child(1)>input {
+
+
+            width: 300px;
+            height: 45px;
+            margin-top: 40px;
+            border-radius: 7px;
+            margin-left: 20px;
+            color: #707a94;
+            border: 1px solid rgb(196, 184, 184);
+            background-color: #0f1014;
+            /* background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            padding: 0 35px 0 35px; */
+
+        }
+
         #right>div:nth-child(1) {
             display: flex;
             width: 100%;
@@ -76,24 +95,19 @@
             /* color:  #707a94; */
         }
 
-            #code>div>input:focus~label,
-            #code .user-box input:valid~label {
-                top: -20px;
-                left: 0;
-                color: #03e9f4;
-                font-size: 12px;
-            }
+           
      
 
 
         #right>div:nth-child(1)>h2 {
             color: white;
             margin-top: 30px;
-            padding-left: 10px;
+            padding-left: 30%;
+            text-align: center;
 
         }
 
-        #help {
+        .help {
             width: 100%;
             height: 40%;
             margin-top: 70px;
@@ -101,14 +115,14 @@
 
         }
 
-        #help>p {
+        .help>p {
             color: #8f98b2;
-            ;
+            
             padding-top: 30%;
             padding-left: 30%;
         }
 
-        #help>p>a {
+        .help>p>a {
             color: #3586f0;
             text-decoration: none;
         }
@@ -161,7 +175,6 @@
         a{
             margin-top: 20%;
             padding: 40% 20%;
-            
         }
         a button{
             height: 50px;
@@ -169,7 +182,6 @@
             color: rgb(20, 13, 13);
             border-radius: 7px;
             cursor: pointer;
-           
         }
         a button:hover{
             columns: var(--text-color);
@@ -177,6 +189,7 @@
             transform: scale(1.1);
 
         }
+       
         .help{
             width: 100%;
             height: 10%;
@@ -206,7 +219,7 @@
             </div>
             <div id="right">
                 <div>
-                    <h2>Log in or sign up to continue</h2>
+                    <h2>Sign Up</h2>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div class="code">
@@ -217,6 +230,10 @@
                             <label>Username</label>
                         </div>
                         <div class="user-box">
+                            <input type="email" name="" required="">
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
                             <input type="password" name="" required="">
                             <label>Password</label>
                         </div>
@@ -225,14 +242,15 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            <button>Login</button>
-                           <button>SignUp</button>
+                            <button>SignUp</button>
+                            
+
                           </a>
 
                     </div>
                 </div>
                 <div class="help">
-                    <p>Having trouble logging in?<a href="">Get Help</a> </p>
+                    <!-- <p>Having trouble logging in?<a href="">Get Help</a> </p> -->
                 </div>
             </div>
 </body>
