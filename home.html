@@ -10,7 +10,7 @@
     <title>home</title>
     <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
     <style>
-         *{
+          *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -30,7 +30,7 @@
             position: fixed;
             background-color: rgb(15,16,19);
             left: 0;
-            z-index: 8;
+            z-index:4;
         }
         #sidebar:hover{
             width: 15%;
@@ -38,23 +38,46 @@
             opacity: 0.9;
             background-image: linear-gradient(to right, rgba(5,5,10,2), rgba(0, 0, 0, 0.2));
         }
-        #mainhead{
+        #top{
             background-color: #0f1014;
             height:140px;
             width:100%;
-            border:1px solid blue;
+            /* border:1px solid blue; */
             display: flex;
             flex-direction: column;
             padding-top: 15px;
         }
-        #navhead{
+
+         #top>div:nth-child(2) {
+            /* border: 1px solid red; */
+            padding: 20px;
+            padding-left: 10px;
+            width: 100%;
+            height: 2%;
+            padding-bottom: 10px;
+            margin-top: 60px;
+
+        }
+
+        #top>div:nth-child(2)>span {
+            color: #ec9d25;
+            color: #ffcc75;
+
+
+            font-family: "Inter", sans-serif;
+
+            padding-bottom: 10px;    
+
+        }
+
+        #navbar{
             /* width:60%; */
             /* height:30%; */
             align-self: center;
             position: fixed;
             left: 1%;
         }
-        #navhead>img{
+        #navbar>img{
            width:100%;
            height:100%;
         }
@@ -67,13 +90,13 @@
             display: flex;
             position: absolute;
         }
-        #sideicon{
+        #icon{
             /* height:100%; */
             width:40%;
             /* border:1px solid green; */
             /* margin-top: 60px; */
         }
-        #sideicon>div{
+        #icon>div{
             height:60px;
             width:100%;
             /* border:1px solid red; */
@@ -81,28 +104,28 @@
             align-items: center;
             justify-content: center;
         }
-        #sideicon>div>img:hover +  #sideicon>div>img{
+        #icon>div>img:hover +  #icon>div>img{
             filter: invert(100%)
         }
-        #sideicon>div>img{
+        #icon>div>img{
             height:35%;
             width: 35%;
             filter: invert(30%)
         }
-        #sideicon:hover + #sidebar{
+        #icon:hover + #sidebar{
             background-image: linear-gradient( to right,rgba(2,5,10,2), rgba(2, 2, 2, 0.2));
         }
-        #sideicon:hover + #iconinfo{
+        #icon:hover + #iconinfo{
             display: block;
         }
         #iconinfo{
-            width:60%;
+            width:50%;
             height:100%;
             /* border:1px solid purple; */
             color:grey;
             display: none;
             /* background-color: #0f1014; */
-            opacity: 0.9;
+            opacity: 1;
         }
         #iconinfo>div{
             height:60px;
@@ -114,8 +137,35 @@
         }
         #iconinfo>div>p{
             font-weight: bold;
-            font-size: 20px;
+            font-size: 15px;
+            color: white;
+        } 
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
         }
+
+        .home .video {
+            height: 50%;
+            width: 100%;
+            border: none;
+          
+        }
+
+        .home .video video {
+            /* position: absolute; */
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
         /* * {
             margin: 0;
             padding: 0;
@@ -357,6 +407,78 @@
             columns: var(--text-color);
             transition: 0.3s all linear;
             transform: scale(1.1);
+        }
+
+
+         #movieimage{
+            height: 750px;
+            width:100%;
+            /* border:1px solid blue; */
+            background-image: linear-gradient(to top , rgba(2,5,10,2), rgba(2, 2, 2, 0.2)),url('https://wallpapercave.com/wp/wp4650953.jpg');
+            background-size: 100% 100%;
+            /* z-index: 2; */
+            display: flex;
+            align-items: end;
+            padding-bottom: 100px;
+        }
+        #movieinfo{
+            height:50%;
+            width:50%;
+            /* border:1px solid red; */
+            padding-left: 50px;
+            color:white;
+            z-index: 7;
+            position:absolute;
+            top:80%;
+            left:8%;
+        }
+        #movieinfo>h1{
+            font-size: 50px;
+        }
+        #movieinfo>p:nth-child(2){
+            font-weight: bold;
+            font-size: 17px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        #movieinfo>p:nth-child(3){
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #movieinfo>p:nth-child(4){
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #movieinfo>p:nth-child(4)>span{
+            color:grey;
+        }
+        #movieinfo>div{
+            height: 55px;
+            width:80%;
+            /* border:1px solid blue; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #movieinfo>div>button:nth-child(1){
+            width:85%;
+            height:100%;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+        }
+        #movieinfo>div>button:nth-child(1)>span{
+            margin-right: 10px;
+        }
+        #movieinfo>div>button:nth-child(2){
+            width:12%;
+            height:100%;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(49,47,47);
+            border: none;
+            opacity: 0.7;
+            border-radius: 10px;
         }
 
         .latest-trending {
@@ -606,20 +728,20 @@
         .footer {
             /* padding: 0 20px; */
             /* z-index: 10; */
-            background: black;
+            /* background: black; */
             /* background-color: #000; */
             /* min-height: 298px; */
             width: 100%;
             color: #161313;
             /* overflow: scroll; */
-            margin-top: 10%;
+            margin-top: 12%;
         }
 
         .footer-content {
             width: 100%;
             display: flex;
             /* background-color: #000000; */
-            background: black;
+            /* background: black;    */
             justify-content: space-around;
             max-width: 1200px;
             min-width: 1200px;
@@ -751,18 +873,22 @@
 <body>
     <div id="screen">
         <div id="sidebar">
-         <div id="mainhead">
-             <div id="navhead">
-                 <img src="./logo-d-plus (1).svg"/>
+         <div id="top">
+             <div id="navbar">
+                 <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg"/>
              </div>
+             <div>
+                <span>Subscribe</span>
+            </div>
          </div>
         <div id="navbarcontent">
-         <div id="sideicon">
+         <div id="icon">
              <div>
               <img src="./user.svg"/>
+              
              </div>
              <div>
-              <img src="./search (3).svg"/>
+              <img src="./search.svg"/>
              </div>
              <div>
               <img src="./home.svg"/>
@@ -774,7 +900,7 @@
               <img src="./monitor-play.svg"/>
              </div>
              <div>
-              <img src="./dribbble-logo (3).svg"/>
+              <img src="./sports.svg"/>
              </div>
           </div>
           <div id="iconinfo">
@@ -788,6 +914,20 @@
              
         </div>
         </div>
+
+        <section class="home" id="home">
+            <div class="video">
+                <video src="once-upon-a-time-in-ukraine-trailer-1_h480p.mov" loop muted autoplay></video>
+                <div class="content">
+                    <!-- <h1>explore new places</h1>
+                    <p>sfdfgfjgkl dkjfdkgfkdglf jdfksdgdklgkl</p> -->
+                </div>
+
+
+
+            </div>
+        </section>
+        
     
 
         <!--<div id="left">
@@ -861,20 +1001,19 @@
 
             </div>
 
-            <!-- <div id="movieimage">
+            <div id="movieimage">
                 <div id="movieinfo">
-                    <h1>Total Dhamaal</h1>
-                    <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
-                    <p>When 50 million bucks are at stake, six eccentric people will do whatever it takes,including
-                        braving the wild.</br>Who will win this race against time?</p>
-                    <p>Comedy <span>|</span> Light-hearted <span>|</span> Sitcom <span>|</span> Slapstick</p>
+                    <h1><img src="https://img1.hotstarext.com/image/upload/f_auto,h_136/sources/r1/cms/prod/8931/1428931-t-03dff7b63412" alt=""></h1>
+                    <p>2019 .2h 33m . Hindi . <span>U/A 7+</span></p>
+                    <p>Divided by time, united by a tragic incident. In a bittersweet reunion, seven middle-aged friends take a walk down the memory lane at the least expected place.</br>Who will win this race against time?</p>
+                    <p>Comedy <span>|</span> Dramedy <span>|</span> Bromance <span>|</span>Buddy</p>
                     <div>
                         <button><span><i class="fa-solid fa-play"></i></span> Watch Now</button>
                         <button>+</button>
                     </div>
                 </div>
 
-            </div> -->
+            </div>
 
             <div class="latest-trending">
                 <div class="section-heading">
