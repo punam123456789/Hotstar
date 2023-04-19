@@ -57,7 +57,7 @@
 
         }
 
-       
+
 
         .code>div:nth-child(1)>input {
 
@@ -95,8 +95,8 @@
             /* color:  #707a94; */
         }
 
-           
-     
+
+
 
 
         #right>div:nth-child(1)>h2 {
@@ -117,7 +117,7 @@
 
         .help>p {
             color: #8f98b2;
-            
+
             padding-top: 30%;
             padding-left: 30%;
         }
@@ -172,25 +172,28 @@
             color: #03e9f4;
             font-size: 12px;
         }
-        a{
+
+        a {
             margin-top: 20%;
             padding: 40% 20%;
         }
-        a button{
+
+        a button {
             height: 50px;
             width: 120px;
             color: rgb(20, 13, 13);
             border-radius: 7px;
             cursor: pointer;
         }
-        a button:hover{
+
+        a button:hover {
             columns: var(--text-color);
             transition: 0.3s all linear;
             transform: scale(1.1);
 
         }
-       
-        .help{
+
+        .help {
             width: 100%;
             height: 10%;
 
@@ -198,13 +201,16 @@
             /* border: 1px solid pink; */
 
         }
-        .help>p{
-            color: #8f98b2;;
+
+        .help>p {
+            color: #8f98b2;
+            ;
             /* padding-top: 30%; */
             padding-left: 10%;
         }
-        .help>p>a{
-            color:#3586f0;
+
+        .help>p>a {
+            color: #3586f0;
             text-decoration: none;
         }
     </style>
@@ -223,29 +229,31 @@
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div class="code">
-                    <div>
-                       
+                    <div onsubmit="register(event)">
+
                         <div class="user-box">
-                            <input type="text" name="" required="">
+                            <input type="text" id="userName" name="" required="">
                             <label>Username</label>
                         </div>
                         <div class="user-box">
-                            <input type="email" name="" required="">
+                            <input type="email" id="userEmail" name="" required="">
                             <label>Email</label>
                         </div>
                         <div class="user-box">
-                            <input type="password" name="" required="">
+                            <input type="password" id="userPassword" name="" required="">
                             <label>Password</label>
                         </div>
+                        <div class="user-box">
+                            <input type="password" id="userConfirmPassword" name="" required="">
+                            <label>ConfirmPassword</label>
+                        </div>
+                        <!-- <input type="submit" value="Register"> -->
                         <a href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <button>SignUp</button>
-                            
 
-                          </a>
+                            <button>SignUp</button>
+
+
+                        </a>
 
                     </div>
                 </div>
@@ -253,7 +261,10 @@
                     <!-- <p>Having trouble logging in?<a href="">Get Help</a> </p> -->
                 </div>
             </div>
-</body>
+        </div>
+    </div>
+
+    <script src="./server.js"></script>
 </body>
 
 </html>

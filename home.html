@@ -10,7 +10,113 @@
     <title>home</title>
     <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
     <style>
-        * {
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #screen{
+            width:100%;
+            /* height:2100px; */
+            /* border:1px solid red; */
+            display: flex;
+            background-color: rgb(15,16,19);
+        }
+        #sidebar{
+            width:6%;
+            height:750px;
+            /* border:1px solid green; */
+            /* background-color: #0f1014; */
+            position: fixed;
+            background-color: rgb(15,16,19);
+            left: 0;
+            z-index: 8;
+        }
+        #sidebar:hover{
+            width: 15%;
+            transition: 0.2s;
+            opacity: 0.9;
+            background-image: linear-gradient(to right, rgba(5,5,10,2), rgba(0, 0, 0, 0.2));
+        }
+        #mainhead{
+            background-color: #0f1014;
+            height:140px;
+            width:100%;
+            border:1px solid blue;
+            display: flex;
+            flex-direction: column;
+            padding-top: 15px;
+        }
+        #navhead{
+            /* width:60%; */
+            /* height:30%; */
+            align-self: center;
+            position: fixed;
+            left: 1%;
+        }
+        #navhead>img{
+           width:100%;
+           height:100%;
+        }
+        #navbarcontent{
+            height:370px;
+            width:220px;
+            /* border:1px solid red; */
+            z-index: 8;
+            margin-top: 60px;
+            display: flex;
+            position: absolute;
+        }
+        #sideicon{
+            /* height:100%; */
+            width:40%;
+            /* border:1px solid green; */
+            /* margin-top: 60px; */
+        }
+        #sideicon>div{
+            height:60px;
+            width:100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #sideicon>div>img:hover +  #sideicon>div>img{
+            filter: invert(100%)
+        }
+        #sideicon>div>img{
+            height:35%;
+            width: 35%;
+            filter: invert(30%)
+        }
+        #sideicon:hover + #sidebar{
+            background-image: linear-gradient( to right,rgba(2,5,10,2), rgba(2, 2, 2, 0.2));
+        }
+        #sideicon:hover + #iconinfo{
+            display: block;
+        }
+        #iconinfo{
+            width:60%;
+            height:100%;
+            /* border:1px solid purple; */
+            color:grey;
+            display: none;
+            /* background-color: #0f1014; */
+            opacity: 0.9;
+        }
+        #iconinfo>div{
+            height:60px;
+            width:100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #iconinfo>div>p{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        /* * {
             margin: 0;
             padding: 0;
             font-family: 'Mulish', sans-serif;
@@ -20,22 +126,22 @@
         #screen {
             width: 100%;
             height: 2000px;
-            /* border: 1px solid red; */
+            border: 1px solid red;
             background-color: black;
             position: relative;
         }
 
         #left {
-            /* position: fixed;
-            height: 500px;
+           position: fixed;
+             height: 500px;
             width: 10%;
             border: 1px solid green;
             background-color: rgb(240, 244, 247);
-            z-index: 30px; */
+            z-index: 30px; 
             width: 10%;
             height: 100%;
-            /* border: 2px solid blue; */
-            /* background-color: #002447; */
+            border: 2px solid blue;
+            background-color: #002447;
             color: white;
             position: sticky;
             padding-bottom: 50px;
@@ -50,7 +156,7 @@
         #left>div:nth-child(1) {
             width: 80%;
             height: 12%;
-            /* border: 1px solid red; */
+            border: 1px solid red;
             padding: 20px;
 
 
@@ -62,24 +168,24 @@
         }
 
         #left>div:nth-child(2) {
-            /* border: 1px solid red; */
-            /* padding: 20px; */
+            border: 1px solid red;
+            padding: 20px;
             padding-left: 10px;
             width: 90%;
             height: 2%;
             padding-bottom: 10px;
-            /* margin-top: 3%; */
+            margin-top: 3%;
 
         }
 
         #left>div:nth-child(2)>span {
-            /* color: #ec9d25; */
+            color: #ec9d25;
             color: #ffcc75;
 
 
             font-family: "Inter", sans-serif;
 
-            /* padding-bottom: 10px;     */
+            padding-bottom: 10px;    
 
         }
 
@@ -111,7 +217,7 @@
 
         .nav-link-title {
             padding-left: 10px;
-            /* text-decoration: none; */
+            text-decoration: none;
         }
 
         .nav-link-title:hover {
@@ -131,14 +237,14 @@
 
         a {
             text-decoration: none;
-        }
+        } */
 
         #right {
 
-            /* height: 120%;
+            height: 120%;
             width: 100%;
-            border: 1px solid green;*/
-            /* background-color: rgb(176, 127, 255);  */
+            border: 1px solid green; 
+            /* background-color: rgb(176, 127, 255); 
 
 
             width: 100%;
@@ -253,104 +359,438 @@
             transform: scale(1.1);
         }
 
-        .home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+        .latest-trending {
+            width: 100%;
+            margin-top: 1px;
+            /* border: .2rem solid greenyellow; */
+        }
+
+        .section-heading {
+            font-size: 2em;
+            color: white;
+            text-transform: capitalize;
+            font-weight: 700;
+            letter-spacing: .04rem;
+
+        }
+
+        .section-list {
+            width: 100%;
+            height: 15rem;
             position: relative;
+            margin: 1rem 0 2rem;
+
         }
 
-        .home .video {
-            height: 50%;
+        .card-container {
+            position: absolute;
             width: 100%;
-        }
-
-        .home .video video {
-            /* position: absolute; */
-            top: 0;
-            right: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .home .content {
-            margin-top: 7rem;
-
-        }
-
-        .home .content h1 {
-            font-size: 6.1vw;
-            color: white;
-            text-shadow: 0 .3rem .5rem black;
-        }
-
-        .home .content p {
-            font-size: 1.5vw;
-            color: white;
-            text-shadow: 0 .3rem .5rem black;
-        }
-
-        .gallery {
-            min-height: 100vh;
-
-        }
-
-        .gallery .box-container {
+            height: 15rem;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 90%;
             margin: 0 auto;
+            padding-left: 1rem;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-behavior: smooth;
+
+
+
         }
 
-        .gallery .box-container .box {
-            height: 20rem;
-            width: 30rem;
-            margin: 2rem;
-            cursor: pointer;
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
             position: relative;
+            min-width: 14rem;
+            width: 12rem;
+            height: 28rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            margin-right: 0.5rem;
+            transition: .5s;
+            cursor: pointer;
+            border-radius: 8px;
         }
 
-        .gallery .box-container .box img {
+        .card:hover {
+            transform: scale(1.2);
+        }
+
+        .card:hover .card-body {
+            opacity: 1;
+        }
+
+        .card-image {
+            width: 100%;
             height: 100%;
-            widows: 100%;
             object-fit: cover;
+            border-radius: 8px;
+
         }
 
-        .gallery .box-container .box .icon {
+        .card-button {
+            /* position: absolute; */
+            padding: .6rem;
+            text-transform: capitalize;
+            font-weight: 600;
+            letter-spacing: .02rem;
+            width: 100%;
+            margin-top: 80%;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+
+        .card-section-info {
+            display: flex;
+            gap: .8rem;
+            align-items: center;
+            margin-top: 1rem;
+            text-transform: capitalize;
+        }
+
+        .card-section-info>span {
+            font-size: 1rem;
+            color: white;
+        }
+
+        .card-para {
+            font-size: 1.2rem;
+            color: #8F98B2;
+            letter-spacing: .02rem;
+            margin-top: 1rem;
+        }
+
+        .card-body {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+            transition: .5s;
+            padding: 1rem;
+            opacity: 0;
+
+        }
+
+        .pre-btn {
+            position: absolute;
+            top: 0;
+            width: 5%;
+            height: 100%;
+            z-index: 2;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            font-size: 2rem;
+        }
+
+
+        .next-btn {
+            position: absolute;
+            top: 0;
+            width: 5%;
+            height: 100%;
+            z-index: 2;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            font-size: 2rem;
+
+        }
+
+
+        .pre-btn {
+            left: 0;
+            background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+            color: white;
+
+        }
+
+        .next-btn {
+            right: 0;
+            background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+            color: white;
+        }
+
+        .pre-btn i,
+        .next-btn i {
+            width: 1.5rem;
+            height: 2rem;
+            opacity: 0;
+        }
+
+        .pre-btn:hover i,
+        .next-btn:hover i {
+            opacity: 1;
+        }
+
+        .latest {
+            margin-top: 20px;
+
+        }
+
+        .imgi {
+            width: 100%;
+            right: 0;
+            position: relative;
+            margin: auto;
+
+        }
+
+        .imgi>img {
+            width: 100%;
+        }
+
+        .heading {
+            color: #bd7100;
+            position: absolute;
+            top: 50%;
+            font-size: 90px;
+            font-style: oblique;
+            font-family: "Inter", sans-serif;
+
+        }
+
+        .latest>div:nth-child(1) {
+            color: white;
+            font-size: large;
+        }
+
+
+
+        .show {
             display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
+            flex-wrap: wrap;
+            height: 120px;
+            width: 100%;
+            /* border: 1px solid green; */
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .show>div {
+            width: 22%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 8px;
+            /* border: none; */
+            margin-bottom: 20px;
+
+
+
+        }
+
+        .show>div>img:hover {
+            columns: var(--text-color);
+            transition: 0.3s all linear;
+            transform: scale(1.2);
+
+        }
+
+        .show>div>img {
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: .2s linear;
-
+            object-fit: cover;
+            border-radius: 7px;
 
 
         }
 
-        .gallery .box-container .box:hover.icon{
-            opacity: 1;
-            top: 0;
+        .footer {
+            /* padding: 0 20px; */
+            /* z-index: 10; */
+            background: black;
+            /* background-color: #000; */
+            /* min-height: 298px; */
+            width: 100%;
+            color: #161313;
+            /* overflow: scroll; */
+            margin-top: 10%;
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            /* background-color: #000000; */
+            background: black;
+            justify-content: space-around;
+            max-width: 1200px;
+            min-width: 1200px;
+            margin: 0 auto;
+            padding: 76px 0;
+            height: 100%;
+        }
+
+        .points {
+            /* color: #808080; */
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            /*    border: 1px solid white;*/
+            width: 300px;
+            margin: 26px 0px 10px 15px;
+            /*    padding: 15px 0px 0px 0px;*/
+        }
+
+        .footer-li {
+            padding: 20px 10px 2px 0px;
+        }
+
+        .footer-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-li a {
+            color: #4b5166;
+            font-size: 15px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .footer-li a:hover {
+            font-weight: 600;
+        }
+
+        .points div {
+            /* border: 2px solid #808080; */
+            /* padding: 10px;
+            margin: 30px 0px 10px 57px;
+            border-radius: 10px;
+            transition: transform 0.5s; */
+            display: flex;
+        }
+
+        .points div img {
+            padding: 10px;
+            margin: 30px 0px 0px 0px;
+            border-radius: 10px;
+            transition: transform 0.5s;
 
         }
-        
+
+        .points img:hover {
+            transform: scale(1.06);
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:1000px) {
+            #screen {
+                width: 100%;
+            }
+
+            #right {
+                width: 100%;
+
+            }
+
+            .main1 {
+                width: 100%;
+                display: flex;
+            }
+
+            main1>div:nth-child(1) {
+                width: 100%;
+            }
+
+            .main1>div:nth-child(1)>img {
+                width: 100%;
+                /* height: 100%; */
+            }
+
+            #mainLeft {
+                /* border: 1px solid blue; */
+                width: 100%;
+            }
+
+            .latest-trending {
+                width: 100%;
+            }
+
+            .section-list {
+                width: 100%;
+            }
+
+            .card-container {
+
+                width: 100%;
+            }
+
+            .card-container {
+
+                width: 100%;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            #mainLeft>div:nth-child(1) {
+                width: 100%;
+            }
+            #mainLeft>div:nth-child(2) {
+                width: 100%;
+            }
+            #mainLeft>div:nth-child(3) {
+                width: 100%;
+            }
+            
+
+        }
     </style>
 </head>
 
 <body>
     <div id="screen">
+        <div id="sidebar">
+         <div id="mainhead">
+             <div id="navhead">
+                 <img src="./logo-d-plus (1).svg"/>
+             </div>
+         </div>
+        <div id="navbarcontent">
+         <div id="sideicon">
+             <div>
+              <img src="./user.svg"/>
+             </div>
+             <div>
+              <img src="./search (3).svg"/>
+             </div>
+             <div>
+              <img src="./home.svg"/>
+             </div>
+             <div>
+              <img src="./television-simple.svg"/>
+             </div>
+             <div>
+              <img src="./monitor-play.svg"/>
+             </div>
+             <div>
+              <img src="./dribbble-logo (3).svg"/>
+             </div>
+          </div>
+          <div id="iconinfo">
+             <div><p>My Space</p></div>
+             <div><p>Search</p></div>
+             <div><p>Home</p></div>
+             <div><p>TV</p></div>
+             <div><p>Movies</p></div>
+             <div><p>Sports</p></div>
+          </div>
+             
+        </div>
+        </div>
+    
 
-        <div id="left">
+        <!--<div id="left">
             <div>
                 <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" alt="">
             </div>
@@ -393,7 +833,7 @@
 
 
 
-        </div>
+        </div> -->
         <div id="right">
             <div class="main1">
                 <div>
@@ -421,82 +861,1018 @@
 
             </div>
 
-            <section class="home" id="home">
-                <div class="video">
-                    <video src="once-upon-a-time-in-ukraine-trailer-1_h480p.mov" loop muted autoplay></video>
-                    <div class="content">
-                        <h1>explore new places</h1>
-                        <p>sfdfgfjgkl dkjfdkgfkdglf jdfksdgdklgkl</p>
+            <!-- <div id="movieimage">
+                <div id="movieinfo">
+                    <h1>Total Dhamaal</h1>
+                    <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
+                    <p>When 50 million bucks are at stake, six eccentric people will do whatever it takes,including
+                        braving the wild.</br>Who will win this race against time?</p>
+                    <p>Comedy <span>|</span> Light-hearted <span>|</span> Sitcom <span>|</span> Slapstick</p>
+                    <div>
+                        <button><span><i class="fa-solid fa-play"></i></span> Watch Now</button>
+                        <button>+</button>
                     </div>
+                </div>
+
+            </div> -->
+
+            <div class="latest-trending">
+                <div class="section-heading">
+                    latest & trending
+                </div>
+
+                <div class="section-list">
+                    <button class="pre-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="./sh1.jpg" class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4967/1494967-v-2b16e4e00bb1"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9415/1489415-v-dd3f07efdbc3"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1926/1481926-v-87f998eca02e"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1740/1481740-v-a55b1b24dabf"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9273/1479273-v-c3a3c07fe35c"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4967/1494967-v-2b16e4e00bb1"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9415/1489415-v-dd3f07efdbc3"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1926/1481926-v-87f998eca02e"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1740/1481740-v-a55b1b24dabf"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9273/1479273-v-c3a3c07fe35c"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="latest-trending">
+                <div class="section-heading">
+                    Popular Shows
+                </div>
+
+                <div class="section-list">
+                    <button class="pre-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4249/1364249-v-2e30b93b7bb5"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4267/1364267-v-59ed5cfdea3a"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/6535/1476535-v-0f56f664f0f6"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4253/1364253-v-17a2ff74143c"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9156/1459156-v-f0033f29e0ed"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/3569/1443569-v-9dd281391af9"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/7721/847721-v"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9415/1489415-v-dd3f07efdbc3"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1926/1481926-v-87f998eca02e"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1740/1481740-v-a55b1b24dabf"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9273/1479273-v-c3a3c07fe35c"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="latest-trending">
+                <div class="section-heading">
+                    Movies Recommended For You
+                </div>
+
+                <div class="section-list">
+                    <button class="pre-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5041/1405041-v-3f9a1366bf49"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/old_images/vertical/MOVIE/3314/1770003314/1770003314-v"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4856/1414856-v-fa398217196a"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9239/1389239-v-b354c74533f6"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/old_images/vertical/MOVIE/4189/1000074189/1000074189-v"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9219/1389219-v-9752e6e5bb92"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/6531/1326531-v-e6302c49fcd9"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9415/1489415-v-dd3f07efdbc3"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1926/1481926-v-87f998eca02e"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1740/1481740-v-a55b1b24dabf"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9273/1479273-v-c3a3c07fe35c"
+                                class="card-image" alt="">
+                            <div class="card-body">
+                                <button class="card-button">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                    <span>watch now</span>
+                                </button>
+                                <div class="card-section-info">
+                                    <span>2023</span>
+                                    <span>.</span>
+                                    <span>2h 10m</span>
+                                    <span>.</span>
+                                    <span>4 languages</span>
+                                </div>
+                                <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="latest-trending">
+                    <div class="section-heading">
+                        Shows Recommended For You
+                    </div>
+
+                    <div class="section-list">
+                        <button class="pre-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="card-container">
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4249/1364249-v-2e30b93b7bb5"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4267/1364267-v-59ed5cfdea3a"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/6535/1476535-v-0f56f664f0f6"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/4253/1364253-v-17a2ff74143c"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9156/1459156-v-f0033f29e0ed"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/3569/1443569-v-9dd281391af9"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/7721/847721-v"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9415/1489415-v-dd3f07efdbc3"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1926/1481926-v-87f998eca02e"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1740/1481740-v-a55b1b24dabf"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9273/1479273-v-c3a3c07fe35c"
+                                    class="card-image" alt="">
+                                <div class="card-body">
+                                    <button class="card-button">
+                                        <span><i class="fa-solid fa-play"></i></span>
+                                        <span>watch now</span>
+                                    </button>
+                                    <div class="card-section-info">
+                                        <span>2023</span>
+                                        <span>.</span>
+                                        <span>2h 10m</span>
+                                        <span>.</span>
+                                        <span>4 languages</span>
+                                    </div>
+                                    <p class="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
 
 
                 </div>
-            </section>
-            <section id="gallery" class="gallery">
-                <h1 class="heading">show</h1>
-                <div class="box-container">
-                    <div class="box">
-                        <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/361/1500361-v-b4b09b222ec6"
-                            alt="">
-                        <div class="icon">
-                            <span>2013</span>
-                            <span>.</span>
-                            <span>2h 10m</span>
-                            <span>.</span>
-                            <span>4 languages</span>
+                <div class="latest">
 
-                        </div>
-
+                    <div>
+                        <h2>Popular Genres</h2>
+                    </div>
+                    <div>
 
                     </div>
+                    <div class="show">
 
-
-
-                    <div class="box">
-                        <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/361/1500361-v-b4b09b222ec6"
-                            alt="">
-                        <div class="icon">
-                            <span>2013</span>
-                            <span>.</span>
-                            <span>2h 10m</span>
-                            <span>.</span>
-                            <span>4 languages</span>
-
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8178/1498178-a-59a4ac398d66"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8153/1498153-a-6598b6ec8b9d"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8155/1498155-a-028b73b8e973 "
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8177/1498177-a-06a0a9d79272"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8136/1498136-a-895be2726b1a"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8174/1498174-a-215c4d5307d9"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8158/1498158-a-14ec91a5af43"
+                                alt="">
+                        </div>
+                        <div>
+                            <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8153/1498153-a-6598b6ec8b9d"
+                                alt="">
                         </div>
 
-
                     </div>
-
-
-
-                    <div class="box">
-                        <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/361/1500361-v-b4b09b222ec6"
-                            alt="">
-                        <div class="icon">
-                            <span>2013</span>
-                            <span>.</span>
-                            <span>2h 10m</span>
-                            <span>.</span>
-                            <span>4 languages</span>
-
-                        </div>
-
-
-                    </div>
-
-
                 </div>
-            </section>
+
+                <footer class="footer">
+                    <div class="footer-content">
+                        <div class="points">
+                            Company
+                            <ul class="footer-ul">
+                                <li class="footer-li"><a href="#">About Us</a></li>
+                                <li class="footer-li"><a href="#">Careers</a></li>
+                                <!-- <li class="footer-li"><a href="#">Track Your Order</a></li>
+                            <li class="footer-li"><a href="#">Returns</a></li>
+                            <li class="footer-li"><a href="#">Find a Store</a></li> -->
+
+                            </ul>
+                        </div>
+                        <div class="points">
+                            View Website in
+                            <ul class="footer-ul">
+                                <li class="footer-li"><a href="#">English</a></li>
+                                <!-- <li class="footer-li"><a href="#">Blog</a></li>
+                            <li class="footer-li"><a href="#">Help & FAQS</a></li>
+                            <li class="footer-li"><a href="#">About Tanishq</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="points">
+                            Need Help ?
+                            <ul class="footer-ul">
+                                <li class="footer-li"><a href="#">Visit Help Center</a></li>
+                                <li class="footer-li"><a href="#">Share Feedback</a></li>
+                                <!-- <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                            <li class="footer-li"><a href="#">Cookie Policy</a></li>
+                            <li class="footer-li"><a href="#">Offer Terms</a></li>
+                            <li class="footer-li"><a href="#">Phishing & Fraud</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="points">
+                            <h4>Connect with Us</h4>
+                            <div>
+                                <div>
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                                        height="54" />
+                                </div>
+                                <div>
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                                        height="54" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
 
 
-
-
-
+            </div>
         </div>
-    </div>
-
+        <script src="./main,js"></script>
 
 </body>
+
 
 </html>
