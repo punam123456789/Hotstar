@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -7,160 +8,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-    width: 100%;
-    background: #0c111b;
-    position: relative;
-    font-family: roboto, sans-serif;
-}
+        body {
+            width: 100%;
+            background: #0c111b;
+            position: relative;
+            font-family: roboto, sans-serif;
+        }
 
-.navbar{
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 0 4%;
-    background: #0c111b;
-    z-index: 9;
-    display: flex;
-    align-items: center;
-}
+        .navbar {
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0 4%;
+            background: #0c111b;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+        }
 
-.brand-logo{
-    height: 70px;
-}
+        .brand-logo {
+            height: 70px;
+        }
 
-.nav-links{
-    margin-top: 10px;
-    display: flex;
-    list-style:none;
-}
+        .nav-links {
+            margin-top: 10px;
+            display: flex;
+            list-style: none;
+        }
 
-.nav-items a{
-    text-decoration: none;
-    margin-left: 20px;
-    text-transform: capitalize;
-    color: #fff;
-    opacity: 0.9;
-}
+        .nav-items a {
+            text-decoration: none;
+            margin-left: 20px;
+            text-transform: capitalize;
+            color: #fff;
+            opacity: 0.9;
+        }
 
-.right-container{
-    display: block;
-    margin-left: auto;
-}
+        .right-container {
+            display: block;
+            margin-left: auto;
+        }
 
-.search-box{
-    border: none;
-    border-bottom: 1px solid #aaa;
-    background: transparent;
-    outline: none;
-    height: 30px;
-    color:#fff;
-    width: 250px;
-    text-transform: capitalize;
-    font-size: 16px;
-    font-weight: 500;
-    transition: .5s;
-}
+        .search-box {
+            border: none;
+            border-bottom: 1px solid #aaa;
+            background: transparent;
+            outline: none;
+            height: 30px;
+            color: #fff;
+            width: 250px;
+            text-transform: capitalize;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .5s;
+        }
 
-.search-box:focus{
-    width: 400px;
-    border-color: #1f80e0;
-}
+        .search-box:focus {
+            width: 400px;
+            border-color: #1f80e0;
+        }
 
-.sub-btn{
-    background: #1f80e0;
-    height: 30px;
-    padding: 0 20px;
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 12px;
-    margin: 0 10px;
-}
+        .sub-btn {
+            background: #1f80e0;
+            height: 30px;
+            padding: 0 20px;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            margin: 0 10px;
+        }
 
-.login-link{
-    color: #fff;
-    opacity: 0.9;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-}
-.login-link a i{
-    color: white;
-    width: 10%;
-    height: 20%;
-    border: 1px solid red;
-}
-.cart{
-    border: 1px solid red;
-    height: 60px;
-    width: 95%;
-    margin-top: 10%;
-    align-items: center;
-    opacity: 0.9;
-    margin-left: 20px;
-    border-color: #1f80e0;
-    background-color: #1f80e0 ;
-    
-}
-.cart>div{
-    align-item: center;
-    padding-left: 50%;
-    padding-top: 20px;
-    font-weight: bold;
-}
-.movie{
-    border: 1px solid red;
-    height: 600px;
-    width: 95%;
-    margin-left: 20px;
-    display: flex;
-    margin-top: 10px;
-}
-.left{
-    border: 1px solid green;
-    height: 100%;
-    width: 65%;
-}
-.left>div{
-    border: 1px solid white;
-    width: 40%;
-    height: 40%;
-    
-}
-.left div img {
-    height: 100%;
-    width: 100%;
-}
+        .login-link {
+            color: #fff;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-.right{
-    border: 1px solid rgb(70, 0, 128);
-    height: 100%;
-    width: 40%;
-    
-    margin-left: 20px;
-  
-}
+        .login-link a i {
+            color: white;
+            width: 10%;
+            height: 20%;
+            border: 1px solid red;
+        }
+
+        .cart {
+            border: 1px solid red;
+            height: 60px;
+            width: 95%;
+            margin-top: 10%;
+            align-items: center;
+            opacity: 0.9;
+            margin-left: 20px;
+            border-color: #1f80e0;
+            background-color: #1f80e0;
+
+        }
+
+        .cart>div {
+            align-item: center;
+            padding-left: 50%;
+            padding-top: 20px;
+            font-weight: bold;
+        }
+
+        .movie {
+            border: 1px solid red;
+            height: 600px;
+            width: 95%;
+            margin-left: 20px;
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .left {
+            border: 1px solid green;
+            height: 100%;
+            width: 65%;
+            /* display: flex; */
+            /* border-bottom:1px solid grey ; */
+
+        }
+        .test{
+            display: flex;
+        }
+
+        .pic {
+            /* border: 1px solid white; */
+            width: 30%;
+            height: 50%;
+            /* object-fit: cover; */
+            padding-left: 20px;
+            /* border-radius: 7px; */
+            /* margin-top: 10px; */
+            /* border-bottom:1px solid grey ; */
 
 
 
+        }
+
+        .pic img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 7px;
+            margin-top: 10%;
+
+
+
+        }
+
+        .movieinfo {
+            color: white;
+            width: 50%;
+            height: 40%;
+            /* border: 1px solid rgb(100, 15, 15); */
+            margin-left: 40px;
+            /* background-color: #252833; */
+        }
+
+        .movieinfo h1 {
+            font-style: italic;
+
+
+        }
+
+        .movieinfo p {
+            color: grey;
+            padding-top: 10px;
+        }
+
+        .like {
+            display: flex;
+            cursor: pointer;
+            width: 40%;
+            height: 50%;
+            /* border: 1px solid rgb(153, 0, 255); */
+        }
+
+        .like div {
+            width: 70%;
+            height: 30%;
+            /* border: 1px solid red; */
+            justify-content: space-evenly;
+            padding-top: 30px;
+            padding-left: 40px;
+        }
+
+        .like i {
+            width: 100%;
+            height: 100%;
+            font-size: xx-large;
+
+        }
+
+        .like p:hover {}
+
+        .like p {
+            color: grey;
+            font-weight: bold;
+            /* display: none; */
+            cursor: pointer;
+
+        }
+
+        .like p {
+            /* display: inline; */
+        }
+
+        .watch {}
+
+        .watch>div {
+            width: 100%;
+            height: 50px;
+            /* margin-top: 50px; */
+            /* border:1px solid blue; */
+            /* margin-bottom: 10px; */
+        }
+
+        .watch>div>button:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+
+
+        .right {
+            border: 1px solid rgb(70, 0, 128);
+            height: 100%;
+            width: 40%;
+
+            margin-left: 20px;
+
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
-        <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" class="brand-logo" alt="">
+        <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" class="brand-logo"
+            alt="">
         <ul class="nav-links">
             <li class="nav-items"><a href="#">Home</a></li>
             <li class="nav-items"><a href="#">TV</a></li>
@@ -168,7 +275,7 @@ body{
             <li class="nav-items"><a href="#">sports</a></li>
             <li class="nav-items"><a href="#">premium</a></li>
         </ul>
-    
+
         <div class="right-container">
             <input type="text" class="search-box" placeholder="search">
             <button class="sub-btn">subscribe</button>
@@ -179,16 +286,56 @@ body{
         <div>
             MyCart
         </div>
-        
+
 
 
     </div>
     <div class="movie">
         <div class="left">
-            <div>
-                <img src="https://wallpapercave.com/wp/wp4650953.jpg" alt="">
-               
+            <div class="test">
+                <div class="pic">
+                    <img src="https://wallpapercave.com/wp/wp4650953.jpg" alt="">
+
+                </div>
+                <div class="movieinfo">
+                    <h1>CHHICHHORE</h1>
+                    <p>2018 .2h 33m . Hindi . <span>U/A 7+</span></p>
+                    <p>Comedy <span>|</span> Dramedy <span>|</span> Bromance <span>|</span>Buddy</p>
+
+                    <div class="like">
+                        <div>
+                            <i class="fa-solid fa-heart"></i>
+                            <p>Like</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-share"></i>
+                            <p>Share</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-download"></i>
+                            <p>Download</p>
+                        </div>
+
+                    </div>
+                    <div class="watch">
+                        <div>
+                            <button><span><i class="fa-solid fa-play"></i></span> Watch Now</button>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
             </div>
+
+
+
+
+
+
+
 
         </div>
         <div class="right">
@@ -196,4 +343,5 @@ body{
         </div>
     </div>
 </body>
+
 </html>
