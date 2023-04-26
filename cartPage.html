@@ -107,7 +107,7 @@
         }
 
         .cart {
-            border: 1px solid red;
+            /* border: 1px solid red; */
             height: 60px;
             width: 95%;
             margin-top: 10%;
@@ -127,8 +127,8 @@
         }
 
         .movie {
-            border: 1px solid red;
-            height: 600px;
+            /* border: 1px solid red; */
+            height: 700px;
             width: 95%;
             margin-left: 20px;
             display: flex;
@@ -136,25 +136,30 @@
         }
 
         .left {
-            border: 1px solid green;
+            /* border: 1px solid green; */
             height: 100%;
             width: 65%;
             /* display: flex; */
             /* border-bottom:1px solid grey ; */
 
         }
-        .test{
+
+        .test {
             display: flex;
+            border-bottom: 1px solid rgb(119, 112, 112);
+            width: 100%;
+            height: 350px;
+            /* background-color: #534e4e; */
         }
 
         .pic {
             /* border: 1px solid white; */
-            width: 30%;
-            height: 50%;
+            width: 50%;
+            height: 90%;
             /* object-fit: cover; */
             padding-left: 20px;
             /* border-radius: 7px; */
-            /* margin-top: 10px; */
+            margin-top: 10px;
             /* border-bottom:1px solid grey ; */
 
 
@@ -166,10 +171,16 @@
             width: 100%;
             object-fit: cover;
             border-radius: 7px;
-            margin-top: 10%;
+            /* margin-top: 10%; */
+            cursor: pointer;
 
 
 
+        }
+        .pic>img:hover{
+            columns: var(--text-color); 
+            transition: 0.3s all linear;
+            transform: scale(1.1);
         }
 
         .movieinfo {
@@ -179,10 +190,13 @@
             /* border: 1px solid rgb(100, 15, 15); */
             margin-left: 40px;
             /* background-color: #252833; */
+            margin-top: 20px;
         }
 
         .movieinfo h1 {
-            font-style: italic;
+            /* font-style: italic; */
+            color: rgb(192, 161, 22);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
 
 
         }
@@ -208,6 +222,25 @@
             padding-top: 30px;
             padding-left: 40px;
         }
+        .like>div:hover{
+            columns: var(--text-color); 
+            transition: 0.3s all linear;
+            transform: scale(1.1);
+        }
+
+        .like>div:nth-child(1) {
+            /* margin-right: 20px; */
+
+        }
+
+        .like>div:nth-child(2) {
+            margin-left: 10px;
+
+        }
+
+        .like>div:nth-child(3)>i {
+            padding-left: 20px;
+        }
 
         .like i {
             width: 100%;
@@ -219,7 +252,7 @@
         .like p:hover {}
 
         .like p {
-            color: grey;
+            color: white;
             font-weight: bold;
             /* display: none; */
             cursor: pointer;
@@ -230,14 +263,23 @@
             /* display: inline; */
         }
 
-        .watch {}
+        .watch {
+            /* border: 1px solid red; */
+            height: 40px;
+            margin-top: 20%;
+        }
 
         .watch>div {
-            width: 100%;
+            width: 90%;
             height: 50px;
             /* margin-top: 50px; */
             /* border:1px solid blue; */
             /* margin-bottom: 10px; */
+        }
+        .watch>div>button:hover{
+            columns: var(--text-color); 
+            transition: 0.3s all linear;
+            transform: scale(1.1);
         }
 
         .watch>div>button:nth-child(1) {
@@ -300,6 +342,44 @@
                 <div class="movieinfo">
                     <h1>CHHICHHORE</h1>
                     <p>2018 .2h 33m . Hindi . <span>U/A 7+</span></p>
+                    <p>Comedy <span>|</span> Dramedy <span>|</span> Bromance <span>|</span>Buddy</p>
+
+                    <div class="like">
+                        <div>
+                            <i class="fa-solid fa-heart"></i>
+                            <p>Like</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-share"></i>
+                            <p>Share</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-download"></i>
+                            <p>Download</p>
+                        </div>
+
+                    </div>
+                    <div class="watch">
+                        <div>
+                            <button><span><i class="fa-solid fa-play"></i></span> Watch Now</button>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="test">
+                <div class="pic">
+                    <img src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5041/1405041-v-3f9a1366bf49" alt="">
+                   
+
+                </div>
+                <div class="movieinfo">
+                    <h1>BRAHMASTRA</h1>
+                    <p>2021 .2h 33m . Hindi . <span>U/A 7+</span></p>
                     <p>Comedy <span>|</span> Dramedy <span>|</span> Bromance <span>|</span>Buddy</p>
 
                     <div class="like">
