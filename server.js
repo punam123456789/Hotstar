@@ -55,7 +55,7 @@ function login(event){
 
      var email=document.getElementById("email").value;
      var password=document.getElementById("password").value;
-    //  var users={}
+    //  var users; 
     //  console.log(email,password)
     if(email && password){
         var LS=JSON.parse(localStorage.getItem("users"))
@@ -84,4 +84,4 @@ function login(event){
         console.log("both fields are required.")
     }
 
-}
+} 
