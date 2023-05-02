@@ -231,17 +231,22 @@
             height: 100%;
             width: 50%;
             /* border:1px solid red; */
-            padding-left: 50px;
+            padding-left: 60px;
             color: white;
-            z-index: 7;
+            /* z-index: 7; */
             position: absolute;
-            top: 10;
+            /* top: 10; */
             left: 8%;
         }
 
         #movieinfo>h1 {
+            top: 10px;
             font-size: 50px;
         }
+         #movieinfo>h1>img {
+            padding-top: 23%;
+
+         }
 
         #movieinfo>p:nth-child(2) {
             font-weight: bold;
@@ -284,6 +289,12 @@
         #movieinfo>div>button:nth-child(1)>span {
             margin-right: 10px;
         }
+        #movieinfo>div>button:hover{
+            columns: var(--text-color); 
+            transition: 0.3s all linear;
+            transform: scale(1.04);
+        }
+
 
         #movieinfo>div>button:nth-child(2) {
             width: 12%;
@@ -338,7 +349,7 @@
         }
 
 
-        .showhover {
+        .show {
 
             z-index: 8;
             position: relative;
@@ -354,7 +365,7 @@
             background-image: linear-gradient(to top, rgba(5, 5, 10, 2), rgba(0, 0, 0, 0.2));
         }
 
-        .showhover>button {
+        .show>button {
             width: 90%;
             align-self: center;
             /* margin: auto; */
@@ -365,14 +376,14 @@
             border: none;
         }
 
-        .showhover>p:nth-child(2) {
+        .show>p:nth-child(2) {
             color: white;
             font-size: 11px;
             margin-top: 5px;
             font-weight: bold;
         }
 
-        .showhover>p:nth-child(3) {
+        .show>p:nth-child(3) {
             color: rgb(161, 156, 156);
             font-size: 11px;
             margin-top: 5px;
@@ -389,7 +400,7 @@
             /* margin-top: -10px; */
         }
 
-        #body1info>div:hover .showhover {
+        #body1info>div:hover .show {
             display: block;
         }
 
@@ -441,7 +452,7 @@
             /* margin-top: -10px; */
         }
 
-        #body2info>div:hover .showhover {
+        #body2info>div:hover .show{
             display: block;
         }
 
@@ -457,6 +468,88 @@
             color: white;
             font-size: 23px;
             margin-left: 10px;
+        }
+        .footer {
+            /* padding: 0 20px; */
+            /* z-index: 10; */
+            /* background: black; */
+            /* background-color: #000; */
+            /* min-height: 298px; */
+            width: 100%;
+            color: #161313;
+            /* overflow: scroll; */
+            margin-top: 12%;
+            
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            /* background-color: #000000; */
+            /* background: black;    */
+            justify-content: space-around;
+            max-width: 1200px;
+            min-width: 1200px;
+            margin: 0 auto;
+            padding-left: 5%;
+            height: 100%;
+        }
+
+        .points {
+            /* color: #808080; */
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            /*    border: 1px solid white;*/
+            width: 300px;
+            margin: 26px 0px 10px 15px;
+            /*    padding: 15px 0px 0px 0px;*/
+        }
+
+        .footer-li {
+            padding: 20px 10px 2px 0px;
+        }
+
+        .footer-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-li a {
+            color: #4b5166;
+            font-size: 17px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .footer-li a:hover {
+            font-weight: 600;
+            transform: scale(1.1);
+        }
+
+        .points div {
+            /* border: 2px solid #808080; */
+            /* padding: 10px;
+            margin: 30px 0px 10px 57px;
+            border-radius: 10px;
+            transition: transform 0.5s; */
+            display: flex;
+        }
+
+        .points div img {
+            padding: 10px;
+            margin: 30px 0px 0px 0px;
+            border-radius: 10px;
+            transition: transform 0.5s;
+
+        }
+
+        .points img:hover {
+            transform: scale(1.06);
+            cursor: pointer;
+           
+            transform: scale(1.1);
         }
 
         @media screen and (max-width:1000px) {
@@ -579,7 +672,7 @@
 
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/6699/1026699-v-cb786ee970de">
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -589,7 +682,7 @@
                 <div>
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/old_images/vertical/MOVIE/3314/1770003314/1770003314-v" />
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -599,7 +692,7 @@
                 <div>
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/9231/1389231-v-6191b0d9af4f" />
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -609,7 +702,7 @@
                 <div>
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1529/571529-v" />
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -620,7 +713,7 @@
 
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/1529/571529-v" />
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -630,7 +723,7 @@
                 <div>
                     <img
                         src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/3669/593669-v" />
-                    <div class="showhover">
+                    <div class="show">
                         <button>Watch Now</button>
                         <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                         <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged
@@ -645,7 +738,7 @@
             <h1>Trailers & More</h1>
             <div>
                 <img src='https://wallpapercave.com/wp/wp4650953.jpg'>
-                <div class="showhover">
+                <div class="show">
                     <button>Watch Now</button>
                     <p>2019 .2h 7m . Hindi . <span>U/A 7+</span></p>
                     <p>Divided by time,united by a tragic incident.In a bittersweet reunion seven middle-aged friends
@@ -654,8 +747,58 @@
             </div>
             <h2><SMall>Chhichhore-Trailer2</SMall></h2>
         </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="points">
+                    Company
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">About Us</a></li>
+                        <li class="footer-li"><a href="#">Careers</a></li>
+                        <!-- <li class="footer-li"><a href="#">Track Your Order</a></li>
+                        <li class="footer-li"><a href="#">Returns</a></li>
+                        <li class="footer-li"><a href="#">Find a Store</a></li> -->
+    
+                    </ul>
+                </div>
+                <div class="points">
+                    View Website in
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">English</a></li>
+                        <!-- <li class="footer-li"><a href="#">Blog</a></li>
+                        <li class="footer-li"><a href="#">Help & FAQS</a></li>
+                        <li class="footer-li"><a href="#">About Tanishq</a></li> -->
+                    </ul>
+                </div>
+                <div class="points">
+                    Need Help ?
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Visit Help Center</a></li>
+                        <li class="footer-li"><a href="#">Share Feedback</a></li>
+                        <!-- <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-li"><a href="#">Cookie Policy</a></li>
+                        <li class="footer-li"><a href="#">Offer Terms</a></li>
+                        <li class="footer-li"><a href="#">Phishing & Fraud</a></li> -->
+                    </ul>
+                </div>
+                <div class="points">
+                    <h4>Connect with Us</h4>
+                    <div>
+                        <div>
+                            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                                height="54" />
+                        </div>
+                        <div>
+                            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                                height="54" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
 
     </div>
+   
 
 
 </body>
