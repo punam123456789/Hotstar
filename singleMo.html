@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
-   
+
     <style>
         * {
             margin: 0;
@@ -61,9 +61,9 @@
             height: 30px;
             /* padding-bottom: 10px; */
             margin-top: 60px;
-             padding-top: 5px;
-             padding-left: 5px;
-             border-radius: 10px;
+            padding-top: 5px;
+            padding-left: 5px;
+            border-radius: 10px;
 
 
         }
@@ -79,8 +79,9 @@
             padding-bottom: 10px;
 
         }
+
         #top>div:nth-child(2)>i {
-              color: #ec9d25;
+            color: #ec9d25;
 
         }
 
@@ -243,10 +244,11 @@
             top: 10px;
             font-size: 50px;
         }
-         #movieinfo>h1>img {
+
+        #movieinfo>h1>img {
             padding-top: 23%;
 
-         }
+        }
 
         #movieinfo>p:nth-child(2) {
             font-weight: bold;
@@ -289,8 +291,9 @@
         #movieinfo>div>button:nth-child(1)>span {
             margin-right: 10px;
         }
-        #movieinfo>div>button:hover{
-            columns: var(--text-color); 
+
+        #movieinfo>div>button:hover {
+            columns: var(--text-color);
             transition: 0.3s all linear;
             transform: scale(1.04);
         }
@@ -452,7 +455,7 @@
             /* margin-top: -10px; */
         }
 
-        #body2info>div:hover .show{
+        #body2info>div:hover .show {
             display: block;
         }
 
@@ -469,6 +472,7 @@
             font-size: 23px;
             margin-left: 10px;
         }
+
         .footer {
             /* padding: 0 20px; */
             /* z-index: 10; */
@@ -479,7 +483,7 @@
             color: #161313;
             /* overflow: scroll; */
             margin-top: 12%;
-            
+
         }
 
         .footer-content {
@@ -537,9 +541,32 @@
             display: flex;
         }
 
+        .points>div:nth-child(2) {
+            /* border: 1px solid red; */
+            width: 180px;
+
+            height: 60px;
+            justify-content: space-evenly;
+
+        }
+
+        .points>div:nth-child(2)>i {
+            /* justify-content: space-between; */
+            /* margin-left: 10px; */
+            font-size: 30px;
+            padding-top: 20px;
+            /* border: 1px solid red; */
+
+
+        }
+         .points>div>i:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
         .points div img {
             padding: 10px;
-            margin: 30px 0px 0px 0px;
+            margin: 50px 0px 0px 0px;
             border-radius: 10px;
             transition: transform 0.5s;
 
@@ -548,9 +575,8 @@
         .points img:hover {
             transform: scale(1.06);
             cursor: pointer;
-           
-            transform: scale(1.1);
         }
+
 
         @media screen and (max-width:1000px) {
 
@@ -757,7 +783,7 @@
                         <!-- <li class="footer-li"><a href="#">Track Your Order</a></li>
                         <li class="footer-li"><a href="#">Returns</a></li>
                         <li class="footer-li"><a href="#">Find a Store</a></li> -->
-    
+
                     </ul>
                 </div>
                 <div class="points">
@@ -782,6 +808,11 @@
                 </div>
                 <div class="points">
                     <h4>Connect with Us</h4>
+
+                    <div>
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
                     <div>
                         <div>
                             <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
@@ -795,10 +826,10 @@
                 </div>
             </div>
         </footer>
-    
+
 
     </div>
-   
+
 
 
 </body>
