@@ -7,7 +7,7 @@
     <title>Add Movie</title>
 </head>
 <body>
-    <h1>Seller Page</h1>
+  
     <form onsubmit="addProduct(event)">
         <label>Movie Image url</label><br />
         <input type="text" id="pimage" /><br />
@@ -24,16 +24,16 @@
     <script>
         function addProduct(event){
             event.preventDefault();
-            var proName = document.getElementById("pname").value;
+            var movName = document.getElementById("pname").value;
           
-            var proImage = document.getElementById("pimage").value;
+            var movImage = document.getElementById("pimage").value;
 
-            var product = {proName  , proImage};
+            var product = {movName  , movImage};
 
             var LS = JSON.parse(localStorage.getItem("Products")) || [];
             LS.push(product);
             localStorage.setItem("Products", JSON.stringify(LS));
-            alert("product added succefully..")
+            alert("Movie added succefully..")
         }
     </script>
     
