@@ -559,7 +559,7 @@
             object-fit: cover;
         }
 
-        #Products {
+        #products {
             width: 100%;
             /* border: 2px solid black; */
             display: flex;
@@ -569,7 +569,7 @@
             color: white;
         }
 
-        #Products>div {
+        #products>div {
             width: 18%;
             border: 1px solid rgb(202, 188, 188);
             text-align: center;
@@ -578,7 +578,7 @@
             border-radius: 7px;
         }
 
-        #Products>div>img {
+        #products>div>img {
             width: 100%;
             height: 200px;
         }
@@ -754,9 +754,11 @@
                     </div>
                 </div>
                 <div id="iconinfo">
-                    <div>
+              
+                    <div style="color: white;" id="switch">
                         <p>My Space</p>
                     </div>
+                  
                     <div>
                         <p>Search</p>
                     </div>
@@ -772,6 +774,7 @@
                     <div>
                         <p>Sports</p>
                     </div>
+                    <div style="color: white;" id="logout"></div>
                 </div>
 
             </div>
@@ -823,44 +826,65 @@
 
             </div> -->
             <div class="body">
-                <div id="Products"></div>
+                <div id="products"></div>
+   
+                <!-- <div id="Products"></div> -->
 
             </div>
         </div>
     </div>
 
+   
+    
     <script>
         window.onload = function () {
-            // alert("hiii")
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                
+                // divfromHtml.append(h1)
+                var button = '<button onclick="logout()">Logout</button>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
 
-            var divToShowProducts = document.getElementById("Products");
+            var divToShowProducts = document.getElementById("products");
             var finalData = "";
 
             var productsFromLS = JSON.parse(localStorage.getItem("Products"))
             for (var i = 0; i < productsFromLS.length; i++) {
-                finalData += `<div onclick='redirect(${JSON.stringify(productsFromLS[i])})' id='singlePro'>
-                                     
-                                    <img src=${productsFromLS[i].movImage} />
-                                     <h3>${productsFromLS[i].movName}</h3>
-                                      
-                             </div>`;
+                finalData += `<div onclick='redirect(${JSON.stringify(productsFromLS[i])})' id='singlePro'><img src=${productsFromLS[i].movImage} /><h3>${productsFromLS[i].movName }</div>`;
             }
 
             // console.log(finalData, "finalData here")
 
             divToShowProducts.innerHTML = finalData;
+
         }
-        function redirect(product){
+        function redirect(product) {
             var singleProduct = JSON.stringify(product);
-            // alert("working");
-            localStorage.setItem("current-product",singleProduct);
-            window.location.href = './SingleProduct.html'
+            // console.log(s, " s here")
+            alert("Working")
+            localStorage.setItem("current-product", singleProduct);
+            window.location.href = './singleProduct.html'
+        }
+
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("currentUser")
+            window.location.reload()
         }
     </script>
-
-
-
-
 
 
 
