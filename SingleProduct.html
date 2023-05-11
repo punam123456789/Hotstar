@@ -1,11 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/4781840b9b.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screen {
+            width: 100%;
+            /* height:2100px; */
+            /* border:1px solid red; */
+            display: flex;
+            background-color: rgb(15, 16, 19);
+        }
+
+        #sidebar {
+            width: 7%;
+            height: 750px;
+            /* border:1px solid green; */
+            /* background-color: #0f1014; */
+            position: fixed;
+            background-color: rgb(15, 16, 19);
+            left: 0;
+            z-index: 4;
+        }
+
+        #sidebar:hover {
+            width: 13%;
+            transition: 0.2s;
+            opacity: 0.9;
+            background-image: linear-gradient(to right, rgba(5, 5, 10, 2), rgba(175, 160, 160, 0.2));
+        }
+
+        #top {
+            background-color: #0f1014;
+            height: 140px;
+            width: 100%;
+            /* border:1px solid blue; */
+            display: flex;
+            flex-direction: column;
+            padding-top: 15px;
+        }
+
+        #top>div:nth-child(2) {
+            border: 1px solid rgb(196, 183, 5);
+            /* padding: 20px; */
+            /* padding-left: 10px; */
+            width: 100px;
+            height: 30px;
+            /* padding-bottom: 10px; */
+            margin-top: 60px;
+            padding-top: 5px;
+            padding-left: 5px;
+            border-radius: 10px;
+
+        }
+
+        #top>div:nth-child(2)>span {
+            color: #ec9d25;
+            color: #ffcc75;
+            padding-top: 5px;
+
+
+            font-family: "Inter", sans-serif;
+
+            padding-bottom: 10px;
+
+        }
+
+        #top>div:nth-child(2)>i {
+            color: #ec9d25;
+
+
+        }
+
+        #navbar {
+            /* width:60%; */
+            /* height:30%; */
+            align-self: center;
+            position: fixed;
+            left: 1%;
+        }
+
+        #navbar>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #navbarcontent {
+            height: 370px;
+            width: 220px;
+            /* border:1px solid red; */
+            z-index: 8;
+            margin-top: 60px;
+            display: flex;
+            position: absolute;
+        }
+
+        #icon {
+            /* height:100%; */
+            width: 40%;
+            /* border:1px solid green; */
+            /* margin-top: 60px; */
+        }
+
+        #icon>div {
+            height: 60px;
+            width: 100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #icon>div>img:hover+#icon>div>img {
+            filter: invert(100%)
+        }
+
+        #icon>div>img {
+            height: 35%;
+            width: 35%;
+            filter: invert(30%)
+        }
+
+        #icon:hover+#sidebar {
+            background-image: linear-gradient(to right, rgba(2, 5, 10, 2), rgba(2, 2, 2, 0.2));
+        }
+
+        #icon:hover+#iconinfo {
+            display: block;
+        }
+
+        #iconinfo {
+            width: 50%;
+            height: 100%;
+
+            display: none;
+
+            opacity: 2;
+        }
+
+        #iconinfo>div {
+            height: 60px;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #iconinfo>div>p {
+            font-weight: bold;
+            font-size: 15px;
+            color: white;
+        }
+
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .home .video {
+            height: 50%;
+            width: 100%;
+            border: none;
+
+        }
+
+        .home .video video {
+            /* position: absolute; */
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+
+
+        #right {
+
+            height: 120%;
+            width: 100%;
+            border: 1px solid green;
+
+            font-size: 14px;
+            /* margin-right: 30%; */
+            padding-left: 10%;
+
+
+        }
+
+
+
+
+
+        .main1 {
+            width: 100%;
+            height: 15%;
+            /* border: 1px solid rgb(0, 255, 106); */
+            /* left: 30%; */
+            display: flex;
+
+        }
+
+        .main1>div:nth-child(1) {
+            width: 50%;
+
+
+        }
+
+        .main1>div:nth-child(1)>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #mainLeft {
+            /* border: 1px solid blue; */
+            width: 50%;
+            height: 100%;
+            padding-left: 10px;
+            /* display: flex; */
+
+        }
+
+        #mainLeft>div:nth-child(1) {
+            display: flex;
+            padding-top: 30px;
+            /* padding-left: 10px; */
+        }
+
+        #mainLeft>div:nth-child(1)>div:nth-child(1) {
+            width: 10%;
+            height: 10%;
+            /* border: 1px solid yellow; */
+            /* padding-top: 30px; */
+
+        }
+
+        #mainLeft>div:nth-child(1)>div:nth-child(1)>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #mainLeft>div:nth-child(1)>div:nth-child(2) {
+            color: white;
+            padding-left: 5px;
+            font: small;
+
+        }
+
+        #mainLeft>div:nth-child(2) {
+            color: white;
+            font-size: large;
+            padding-top: 10px;
+        }
+
+        #mainLeft>div:nth-child(3) {
+            align-items: center;
+            /* padding-left: 30px; */
+            align-items: center;
+            padding-top: 50px;
+            height: 60px;
+            /* width: 130px; */
+
+
+        }
+
+        #mainLeft>div:nth-child(3)>button {
+            align-items: center;
+            background-color: #252833;
+            height: 40px;
+            width: 150px;
+            border-radius: 7px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-size: large;
+
+
+
+        }
+
+        #mainLeft>div:nth-child(3)>button:hover {
+            columns: var(--text-color);
+            transition: 0.3s all linear;
+            transform: scale(1.1);
+        }
+
+
+        #movieimage {
+            height: 750px;
+            width: 100%;
+            /* border:1px solid blue; */
+            background-image: linear-gradient(to top, rgba(2, 5, 10, 2), rgba(2, 2, 2, 0.2)), url('https://wallpapercave.com/wp/wp4650953.jpg');
+            background-size: 100% 100%;
+            /* z-index: 2; */
+            display: flex;
+            align-items: end;
+            padding-bottom: 100px;
+        }
+
+        #movieinfo {
+            height: 50%;
+            width: 50%;
+            /* border:1px solid red; */
+            padding-left: 50px;
+            color: white;
+            z-index: 7;
+            position: absolute;
+            top: 80%;
+            left: 8%;
+        }
+
+        #movieinfo>h1 {
+            font-size: 50px;
+        }
+
+        #movieinfo>p:nth-child(2) {
+            font-weight: bold;
+            font-size: 17px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #movieinfo>p:nth-child(3) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #movieinfo>p:nth-child(4) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #movieinfo>p:nth-child(4)>span {
+            color: grey;
+        }
+
+        #movieinfo>div {
+            height: 55px;
+            width: 80%;
+            /* border:1px solid blue; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #movieinfo>div>button:nth-child(1) {
+            width: 85%;
+            height: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+        }
+
+        #movieinfo>div>button:nth-child(1)>span {
+            margin-right: 10px;
+        }
+
+        #movieinfo>div>button:hover {
+            columns: var(--text-color);
+            transition: 0.3s all linear;
+            transform: scale(1.04);
+        }
+
+
+        #movieinfo>div>button:nth-child(2) {
+            width: 12%;
+            height: 100%;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(49, 47, 47);
+            border: none;
+            opacity: 0.7;
+            border-radius: 10px;
+        }
+
+
+
+        .latest {
+            margin-top: 30px;
+
+        }
+
+        .latest>div:nth-child(1) {
+            color: white;
+            /* font-size: large; */
+            font-size: 22px;
+
+        }
+
+
+
+        .show {
+            display: flex;
+            flex-wrap: wrap;
+            height: 120px;
+            width: 100%;
+            /* border: 1px solid green; */
+            justify-content: space-evenly;
+            margin-top: 20px;
+            padding-right: 20px;
+        }
+
+        .show>div {
+            width: 22%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 8px;
+            /* border: none; */
+            margin-bottom: 20px;
+
+
+
+        }
+
+        .show>div>img:hover {
+            columns: var(--text-color);
+            transition: 0.3s all linear;
+            transform: scale(1.2);
+
+        }
+
+        .show>div>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 7px;
+
+
+        }
+
+        .body {
+            /* height:420px; */
+            width: 100%;
+            /* padding-left: 10%; */
+        }
+
+        .bodyhead {
+            height: 90px;
+            width: 100%;
+            /* border:1px solid green; */
+            display: flex;
+            align-items: end;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid grey; */
+        }
+
+        .bodyhead>p {
+            width: 500px;
+            font-size: 22px;
+        }
+
+        .bodyhead>p:nth-child(1) {
+            color: white;
+        }
+
+
+
+        .bodyinfo {
+            /* height:330px; */
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid green; */
+            padding-top: 30px;
+            padding-top: -50%;
+        }
+
+
+        .showhover {
+
+            z-index: 8;
+            position: relative;
+            height: 40%;
+            bottom: 0;
+            margin-top: -62%;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            /* top:110px; */
+            display: none;
+            padding: 10px;
+            background-image: linear-gradient(to top, rgba(5, 5, 10, 2), rgba(0, 0, 0, 0.2));
+        }
+
+        .showhover>button {
+            width: 90%;
+            align-self: center;
+            /* margin: auto; */
+            height: 30px;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .showhover>p:nth-child(2) {
+            color: white;
+            font-size: 11px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .showhover>p:nth-child(3) {
+            color: rgb(161, 156, 156);
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .bodyinfo>div:hover {
+            /* scale: 1.5; */
+            transition: 0.2s;
+            z-index: 3;
+            transform: scale(1.5, 1.2);
+            box-shadow: 5px 10px 18px rgb(51, 46, 46);
+            /* object-fit: center; */
+            /* border:1px solid red; */
+            /* margin-top: -10px; */
+        }
+
+        .bodyinfo>div:hover .showhover {
+            display: block;
+        }
+
+
+
+        .bodyinfo>div {
+            width: 16%;
+            height: 280px;
+
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .bodyinfo>div>img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        #products {
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            color: white;
+        }
+
+        #products>div {
+            width: 18%;
+            border: 1px solid rgb(202, 188, 188);
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 20px;
+            border-radius: 7px;
+        }
+
+        #products>div>img {
+            width: 100%;
+            height: 200px;
+        }
+
         #singlePro {
             width: 100%;
         }
@@ -22,15 +596,266 @@
             width: 100%;
             height: 400px;
         }
+
+        .footer {
+
+            width: 100%;
+            color: #161313;
+            /* overflow: scroll; */
+            margin-top: 12%;
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            /* background-color: #000000; */
+            /* background: black;    */
+            justify-content: space-around;
+            max-width: 1200px;
+            min-width: 1200px;
+            margin: 0 auto;
+            padding: 76px 0;
+            height: 100%;
+        }
+
+        .points {
+            /* color: #808080; */
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            /*    border: 1px solid white;*/
+            width: 300px;
+            margin: 26px 0px 10px 15px;
+            /*    padding: 15px 0px 0px 0px;*/
+        }
+
+        .footer-li {
+            padding: 20px 10px 2px 0px;
+        }
+
+        .footer-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-li a {
+            color: #4b5166;
+            font-size: 15px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        .footer-li a:hover {
+            font-weight: 600;
+        }
+
+        .points div {
+            /* border: 2px solid #808080; */
+            /* padding: 10px;
+            margin: 30px 0px 10px 57px;
+            border-radius: 10px;
+            transition: transform 0.5s; */
+            display: flex;
+            margin-right: 20px;
+
+        }
+
+        .points>div:nth-child(2) {
+            /* border: 1px solid red; */
+            width: 180px;
+
+            height: 60px;
+            justify-content: space-evenly;
+
+        }
+
+        .points>div:nth-child(2)>i {
+            /* justify-content: space-between; */
+            /* margin-left: 10px; */
+            font-size: 30px;
+            padding-top: 20px;
+            /* border: 1px solid red; */
+
+
+        }
+
+        .points>div>i:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .points div img {
+            padding: 10px;
+            margin: 50px 0px 0px 0px;
+            border-radius: 10px;
+            transition: transform 0.5s;
+
+        }
+
+        .points img:hover {
+            transform: scale(1.06);
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:1000px) {
+            #screen {
+                width: 100%;
+            }
+
+            #right {
+                width: 100%;
+
+            }
+
+            .main1 {
+                width: 100%;
+                display: flex;
+            }
+
+            main1>div:nth-child(1) {
+                width: 100%;
+            }
+
+            .main1>div:nth-child(1)>img {
+                width: 100%;
+                /* height: 100%; */
+            }
+
+            #mainLeft {
+                /* border: 1px solid blue; */
+                width: 100%;
+            }
+
+
+
+
+        }
+       
     </style>
 </head>
 
 <body>
-    <div id="singleProduct"></div>
+
+    <div id="screen">
+        <div id="sidebar">
+            <div id="top">
+                <div id="navbar">
+                    <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" />
+                </div>
+                <div>
+                    <span>Subscribe </span><i class="fa-solid fa-greater-than"></i>
+                </div>
+            </div>
+            <div id="navbarcontent">
+                <div id="icon">
+                    <div>
+                        <img src="./user.svg" />
+
+                    </div>
+                    <div>
+                        <img src="./search.svg" />
+                    </div>
+                    <div>
+                        <img src="./home.svg" />
+                    </div>
+                    <div>
+                        <img src="./television-simple.svg" />
+                    </div>
+                    <div>
+                        <img src="./monitor-play.svg" />
+                    </div>
+                    <div>
+                        <img src="./sports.svg" />
+                    </div>
+                </div>
+                <div id="iconinfo">
+              
+                    <div style="color: white;" id="switch">
+                        <p>My Space</p>
+                    </div>
+                  
+                    <div>
+                        <p>Search</p>
+                    </div>
+                    <div>
+                        <p>Home</p>
+                    </div>
+                    <div>
+                        <p>TV</p>
+                    </div>
+                    <div>
+                        <p>Movies</p>
+                    </div>
+                    <div>
+                        <p>Sports</p>
+                    </div>
+                    <div style="color: white;" id="logout"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div id="right">
+            <div class="main1">
+                <div>
+                    <img src="https://shifu.hotstarext.com/SOURCE/VOD/cd-2023-04-15/3RTSv4_deskXbb-8fed3973-129b-416c-9338-0b71af9a614e.jpg"
+                        alt="">
+                </div>
+                <div id="mainLeft">
+                    <div>
+                        <div>
+                            <img src="https://brand-img1.hotstarext.com/image/upload/v1585728139/Disnet%20Plus%20Hotstar%20Logo/D_Hotstar_logo_Dark_BG_120x120.png"
+                                alt="">
+                        </div>
+                        <div>
+                            <h3>Disney+ Hotstar</h3>
+                            <p>Endless Entertainment</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Don't Wait For This Endless Entertainment, Just <br> A Click Away!</p>
+                    </div>
+                    <div>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 
+            <div id="movieimage">
+                <div id="movieinfo">
+                    <h1><img src="https://img1.hotstarext.com/image/upload/f_auto,h_136/sources/r1/cms/prod/8931/1428931-t-03dff7b63412"
+                            alt=""></h1>
+                    <p>2019 .2h 33m . Hindi . <span>U/A 7+</span></p>
+                    <p>Divided by time, united by a tragic incident. In a bittersweet reunion, seven middle-aged friends
+                        take a walk down the memory lane at the least expected place.</p>
+                    <p>Comedy <span>|</span> Dramedy <span>|</span> Bromance <span>|</span>Buddy</p>
+                    <div>
+                        <button><span><i class="fa-solid fa-play"></i></span> Watch Now</button>
+                        <button>+</button>
+                    </div>
+                </div>
+
+            </div> -->
+            <div class="body">
+                <div id="singleProduct"></div>
+   
+                <!-- <div id="Products"></div> -->
+
+            </div>
+        </div>
+    </div>
+
+   
+   
 
     <script>
         window.onload = function () {
-             // alert("working")
+             alert("working")
              var currentUser = JSON.parse(localStorage.getItem("currentUser"))
             // console.log(currentUser,"current user");
             if (!!currentUser) {
@@ -41,8 +866,8 @@
                 // var h1=document.createElement("h1");
                 
                 // divfromHtml.append(h1)
-                // var button = '<button onclick="logout()">Logout</button>'
-                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var button = '<button onclick="logout()">Logout</button>'
+                // var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
                 var name = `<h1>${currentUser.userName}</h1>`;
                 divfromHtml.innerHTML = name;
                 logoutDiv.innerHTML = button;
